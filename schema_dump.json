@@ -1,0 +1,49 @@
+{
+    "notifications": [
+        "id",
+        "user_id",
+        "title",
+        "message",
+        "type",
+        "link",
+        "is_read",
+        "created_at"
+    ],
+    "materials": [
+        "id",
+        "title",
+        "description",
+        "category",
+        "file_path",
+        "thumbnail_path",
+        "contributor_id",
+        "status",
+        "is_official",
+        "views_count",
+        "downloads_count",
+        "created_at"
+    ],
+    "users": [
+        "id",
+        "full_name",
+        "first_name",
+        "last_name",
+        "email",
+        "password",
+        "role",
+        "profile_image",
+        "created_at",
+        "is_banned",
+        "reset_token",
+        "reset_token_expiry",
+        "is_verified",
+        "verification_code"
+    ],
+    "audit_logs": [
+        "id",
+        "user_id",
+        "action",
+        "details",
+        "timestamp"
+    ]
+}
