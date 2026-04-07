@@ -1,0 +1,178 @@
+/* 
+ * WMSU ARL Hub - Institutional Design System v3.1 (Global Alignment)
+ * Standardized Fonts: Inter (Heading & Body)
+ * Typography: h1 (64px), h2 (12px), body (16px)
+ * Spacing: Base Unit (4), Border Radius (8px)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    /* ── WMSU Official Palette ── */
+    --wmsu-red: #B81C2E;
+    --wmsu-red-dark: #8C1222;
+    --wmsu-red-light: rgba(184, 28, 46, 0.08);
+    --wmsu-black: #1A1A28; 
+    --wmsu-gold: #D4AF37;
+    --wmsu-white: #FFFFFF;
+    
+    /* ── UI Surfaces ── */
+    --bg-base: #F4F4F6;
+    --border-light: rgba(0, 0, 0, 0.05);
+    --text-primary: #1A1A28;
+    --text-secondary: #4A4A5A;
+    --text-muted: #848494;
+
+    /* ── Spacing & Geometry (Strictly 8px) ── */
+    --base-unit: 4px;
+    --radius-8: 8px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 8px;   /* Unified to institutional 8px */
+    --radius-xl: 12px;  /* Only for large surface containers, but keeping near 8px */
+    
+    --header-height: 64px;
+    --sidebar-width: 240px;
+
+    /* ── Typography Units ── */
+    --font-h1: 64px;
+    --font-h2: 12px;
+    --font-body: 16px;
+    
+    /* ── Shadows ── */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+    --shadow-md: 0 12px 24px -8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 32px 64px -16px rgba(0,0,0,0.15);
+    --shadow-red: 0 12px 24px -8px rgba(184, 28, 46, 0.4);
+}
+
+/* ── Global Reset ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.institutional-seal {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 4px 12px rgba(184, 28, 46, 0.2));
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    height: 100%;
+    scroll-padding-top: 64px; /* Matches header height */
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-secondary);
+    font-size: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* ── Typography ── */
+h1 {
+    font-size: var(--font-h1);
+    font-weight: 900;
+    color: var(--wmsu-black);
+    line-height: 1.0;
+    letter-spacing: -0.05em;
+    margin-bottom: calc(var(--base-unit) * 8);
+}
+
+h2 {
+    font-size: var(--font-h2);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--wmsu-red);
+    margin-bottom: calc(var(--base-unit) * 4);
+}
+
+/* ── Interactive Elements ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--radius-8);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+}
+
+.btn:active { transform: scale(0.96); }
+
+.btn-primary {
+    background: var(--wmsu-red);
+    color: white;
+    box-shadow: var(--shadow-red);
+}
+
+.btn-primary:hover {
+    background: var(--wmsu-red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -8px rgba(184, 28, 46, 0.5);
+}
+
+.btn-login {
+    background: rgba(255, 255, 255, 0.08); 
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-login:hover {
+    background: white;
+    color: var(--wmsu-black);
+    border-color: white;
+}
+
+.card {
+    background: var(--wmsu-white);
+    border-radius: var(--radius-8);
+    border: 1px solid var(--border-light);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(184, 28, 46, 0.2);
+    transform: translateY(-4px);
+}
+
+/* ── Dashboard Layout ── */
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+    overflow-y: visible;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 120px 48px 48px; /* Offset for top-nav */
+    min-height: 100vh;
+    overflow-y: visible;
+}
+
